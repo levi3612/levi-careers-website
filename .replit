@@ -1,0 +1,28 @@
+modules = ["python-base-3.13"]
+[nix]
+channel = "stable-24_05"
+packages = ["cairo", "ffmpeg-full", "freetype", "ghostscript", "glibcLocales", "gobject-introspection", "gtk3", "pkg-config", "qhull", "tcl", "tk"]
+
+[workflows]
+
+[[workflows.workflow]]
+name = "Run App.Py"
+mode = "sequential"
+author = 44570594
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "python app.py"
+
+[[workflows.workflow]]
+name = "Install Packages"
+mode = "sequential"
+author = 44570594
+
+[[workflows.workflow.tasks]]
+task = "packager.installForLanguage"
+args = "python3"
+
+[[ports]]
+localPort = 5000
+externalPort = 80
