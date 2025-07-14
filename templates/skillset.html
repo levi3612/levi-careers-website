@@ -1,0 +1,18 @@
+<div style = "margin-bottom:16px; padding-bottom:8px" class = "border-bottom border-dark row"> 
+<div class = "col-9">
+    <h4 style = "color: rgb(120,120,120); margin-bottom:0px;">   
+    {{skill['title']}} </h4>
+    <div>
+    <b> Location: </b> {{skill['location']}} 
+    </div>
+    {%if 'salary' in skill %}
+    <div> 
+      <b> Salary: </b> {{skill['salary']}}
+    </div>
+    {%endif%}
+</div>
+  <div class = "col-3">
+    <button type="button" class = "btn btn-outline-info">More Info </button>
+  </div>
+
+</div>
