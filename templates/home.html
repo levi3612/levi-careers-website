@@ -10,6 +10,8 @@
       #banner{
         height: 360px;
         width: 100%;
+        object-fit: cover;
+        margib-bottom: 16px;
       }
     </style>
     
@@ -17,14 +19,22 @@
 
   
   <body>
-    <div> 
+    {% include 'nav.html' %}
+     <img  id = "banner" class = "img-fluid mt-0" src = "/static/banner.jpg" alt = "banner" >
+    <div class = "container" style = "padding-top: 16px;"> 
     <h1  style = "color: rgb(120,120,120);"class = "text-center mt-3" > <b> LEVI CAAYA III </b> </h1>
     <h2 style = "margin-top:-15px;" class = "text-center mb-2" > Computer Engineer</h2>
-    <img  id = "banner" class = "img-fluid mt-0" src = "/static/banner.jpg" alt = "banner" >
+   
 
   <h2 class = "text-center mt-2 mb-4"> About Levi </h2>
-    <p class = "lead"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. </p>
-
+     <div class = "row" style = "margin-bottom: 16px;">
+     <div class = "col-md-6">
+    <p class = "lead"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. </p> 
+    </div>
+    <div class = "d-none d-md-block col-md-6">
+     <img src="/static/antman.jpg" alt = "antman" style="height: 320px; border-radius: 4px;" >
+     </div>
+     </div>
     <h2 class = "text-center"> Basic Information </h2>
     <p class = "text-center"> 
       {% for skill in skills %}
@@ -35,5 +45,6 @@
     <button class = "btn btn-primary btn-lg" > Contact Levi! </button>
     </div>
     </div>
+    {% include 'footer.html' %}
   </body>
 </html>
